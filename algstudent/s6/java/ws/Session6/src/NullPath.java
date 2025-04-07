@@ -10,11 +10,12 @@ public class NullPath {
 	private static int[][] weigth;
 	private static int[] nodes;
 	private static List<Integer> nullPath;
-	private static boolean found = false;
+	private static boolean found;
 	private static int value;
 	
 	public static void calculate(int num){
 		int n = num;
+		found = false;
 		nodes = new int[n];
 		weigth = new int[n][n];
 		createWeigthMatrix(n);
@@ -39,6 +40,9 @@ public class NullPath {
 	private static void calculateNullPath() {
 		nullPath.add(nodes[0]);
 		backtracking(nodes[0]);
+		if(!found) {
+			System.out.println("There's no solution");
+		}
 	}
 
 	private static void backtracking(int num) {
