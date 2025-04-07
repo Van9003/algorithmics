@@ -20,7 +20,7 @@ public class NullPath {
 		createWeigthMatrix(n);
 		nullPath = new ArrayList<>();
 		calculateNullPath();
-		printNullPath();
+		//printNullPath();
 	}
 	
 	private static void createWeigthMatrix(int n) {

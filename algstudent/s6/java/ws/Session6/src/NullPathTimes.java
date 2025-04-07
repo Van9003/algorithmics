@@ -3,9 +3,14 @@ public class NullPathTimes {
 	
 	
 	public static void main(String[] arg) {
-		int n = Integer.valueOf(arg[0]);
-		
-		NullPath.calculate(n);
-
+		for(int n = 20; n < 1000000; n+=5) {
+			long t1=0,t2 =0;
+			for(int i = 0; i <1000; i++) {
+				t1 += System.currentTimeMillis();
+				NullPath.calculate(n);
+				t2 += System.currentTimeMillis();
+			}
+			System.out.println("\nn = "+n+" ** "+"TIME = "+(t2-t1)/100);
+		}
 	}
 }
