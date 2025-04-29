@@ -5,6 +5,7 @@ Some issues observed. Code-related may be fixed for the test:
 * No greedy algorithm. If you don't have it you should really should implement this one, as it is a possibility for the authory test.
 * Floyd is not entirely right. For this matrix:
 
+```
 static void fillInWeights(int[][] w) {
 		for (int i = 0; i < w.length; i++)
 			for (int j = 0; j < w.length; j++)
@@ -16,16 +17,18 @@ static void fillInWeights(int[][] w) {
 		w[3][1] = 67;
 		w[3][3] = 71;
 	}
-
+```
  It gets the right costs but not the paths:
-ROM NODE2 TO NODE1 = NODE2-->NODE3-->NODE1
+```
+FROM NODE2 TO NODE1 = NODE2-->NODE3-->NODE1
 
 MINIMUM COST=60
+```
 When it should be:
-
+```
 FROM NODE2 TO NODE1 = NODE2-->NODE3-->NODE0-->NODE1
 
 MINIMUM COST=60
-
+```
 You say that it's exponential complexity. Is it?
 * Backtracking is alright but the doc is really barebones. Could use some explanation.
